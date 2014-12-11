@@ -31,6 +31,8 @@ gem 'better_errors', group: :development
 gem 'binding_of_caller', group: :development
 gem 'rails_best_practices', group: :development
 
+gem 'rails_12factor'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
