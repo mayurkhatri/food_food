@@ -53,4 +53,20 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  concern :recipeable do
+    resources :recipes
+  end
+
+  concern :videoable do 
+    resources :videos
+  end
+
+  concern :showable do
+    resources :shows
+  end
+
+  resources :cuisines, concerns: [:recipeable, :videoable]
+  resources :courses, concerns: [:recipeable, :videoable]
+  resources :shows, concerns: [:recipeable, :videoable]
+  resources :chefs, concerns: [:recipeable, :videoable, :showable]
 end
