@@ -6,7 +6,7 @@ gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use SCSS for stylesheets
-#gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -32,6 +32,8 @@ gem 'binding_of_caller', group: :development
 gem 'rails_best_practices', group: :development
 
 gem 'rails_12factor'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
