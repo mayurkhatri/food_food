@@ -1,4 +1,6 @@
-ActiveAdmin.register Recipe do
+ActiveAdmin.register Chef do
+
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -11,12 +13,6 @@ ActiveAdmin.register Recipe do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-  permit_params :name, :ingredients, :preparation_method, :preparation_time, :cooking_time, :course_id, :cuisine_id, :chef_id, :show_id
-#  controller do
-#    def create
-#      super
-#      debugger
-#    end
-#  end
+  permit_params :name, :about, :achievement
 
 end
