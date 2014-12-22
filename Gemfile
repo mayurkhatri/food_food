@@ -33,7 +33,10 @@ gem 'rails_best_practices', group: :development
 
 gem 'rails_12factor'
 gem 'activeadmin', github: 'activeadmin'
+gem 'formtastic'
 gem 'devise'
+gem 'carrierwave'
+gem 'rmagick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
