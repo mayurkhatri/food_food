@@ -4,6 +4,6 @@ class ChangeColumnDescriptionShows < ActiveRecord::Migration
   end
 
   def down
-    change_column :shows, :description, :string 
+    change_column :shows, :description, :string
   end
 end

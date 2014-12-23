@@ -17,7 +17,7 @@ ActiveAdmin.register Recipe do
   form(:html => { :multipart => true }) do |f|
     f.inputs "Recipe" do
       f.input :name
-    end  
+    end 
     f.inputs "Picture", :for => [:picture, f.object.picture || Picture.new] do |picture_form|
       picture_form.input :name
       picture_form.input :image, :as => :file, :hint => picture_form.object.image.present? ? picture_form.template.image_tag(picture_form.object.image.url(:thumb)) : picture_form.template.content_tag(:span, "no cover page yet")

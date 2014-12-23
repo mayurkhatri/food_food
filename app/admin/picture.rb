@@ -14,7 +14,7 @@ ActiveAdmin.register Picture do
   #   permitted
   # end
  # permit_params :name, :image
-    
+ 
  # form(:html => { :multipart => true }) do |f|
  #   f.inputs "Recipe" do
  #     f.input :name
