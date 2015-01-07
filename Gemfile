@@ -38,6 +38,12 @@ gem 'devise'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'therubyracer'
+gem 'less-rails' 
+gem 'twitter-bootstrap-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'oauth2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

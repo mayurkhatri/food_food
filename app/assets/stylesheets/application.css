@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.session_links{
+  float: right !important;
+  padding-right: 80px;
+}
