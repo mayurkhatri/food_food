@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <% if user_signed_in? %>
     <div class="session_links">
-      <%= link_to 'Logout', destroy_user_session_path, id: "sign_out", method: :get %>
+      <%= link_to 'Logout', destroy_user_session_path, id: "sign_out", method: :delete %>
     </div>
   <% else %>
     <div class="session_links">
