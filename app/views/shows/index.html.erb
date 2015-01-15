@@ -1,0 +1,8 @@
+<h1>Shows</h1>
+<% @shows.each do |show| %>
+  <% unless show.picture.blank? %>
+    <%= image_tag show.picture.image_url(:thumb)%>
+  <%end%>
+  <%= show.name%>
+  <br/>
+<%end%>

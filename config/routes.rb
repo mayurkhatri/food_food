@@ -1,17 +1,25 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  get 'shows/index'
+
+  get 'shows/show'
+
+  get 'chefs/index'
+
+  get 'chefs/show'
+
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   devise_scope :user do
-    get 'users/sign_out', :to => 'devise/sessions#destroy'
+    get 'users/sign_out', to: 'devise/sessions#destroy'
   end
-  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'recipes#index'
+  root 'recipes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

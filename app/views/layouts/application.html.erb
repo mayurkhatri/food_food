@@ -15,6 +15,52 @@
     <%= link_to 'Login with Facebook', user_omniauth_authorize_path(:facebook), id: "sign_in" %>
     </div>
   <% end %>
+  <br/>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#food-food-navbar-collapse-1">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Food Food</a>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="food-food-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        <li text-decoration="none"><%= link_to "Chefs", chefs_path %></li>
+        <li><%= link_to "Shows", shows_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Recipes<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Cuisine</a></li>
+            <li><a href="#">Course</a></li>
+            <li class="divider"></li>
+            <li><a href="#">By Show</a></li>
+          </ul>
+        </li> <!-- recipes dropdown-->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Videos<span class="caret"></span></a>
+ 	  <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Cuisine</a></li>
+            <li><a href="#">Course</a></li>
+            <li class="divider"></li>
+            <li><a href="#">By Show</a></li>
+          </ul>
+        </li> <!-- videos dropdown -->
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search recipes">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </ul>
+    </div>
+  </nav>
 </head>
 <body>
 <div class="container">

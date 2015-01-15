@@ -1,0 +1,9 @@
+<h1>Chefs</h1>
+<% @chefs.each do |chef|%>
+  <% if chef.picture.present? %>
+    <%= image_tag chef.picture.image_url(:thumb)  %>
+  <%end%>
+  <%= chef.name%>
+  <br/>
+<%end%>
+
