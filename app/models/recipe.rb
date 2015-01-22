@@ -6,6 +6,27 @@ class Recipe < ActiveRecord::Base
 
   has_one :picture, as: :imageable
   accepts_nested_attributes_for :picture
+ 
+  def self.find_recipes(category)
+    if category.eql?("cuisine")
+      recipes = Recipe.includes(:picture, :cuisine).order('name ASC')
+    elsif category.eql?("course")
+      recipes = Recipe.includes(:picture, :course).order('name ASC')
+    elsif category.eql?("show")
+      recipes = Recipe.includes(:picture, :show).order('name ASC')
+    end
+  end
+ 
+  def self.group_recipe(category, recipes)
+    if category.eql?("cuisine")
+      return recipes.group_by(&:cuisine)
+    recipes = Recipe.includes(:picture, :cuisine).order('name ASC')
+    elsif category.eql?("course")
+      return recipes.group_by(&:course)
+    elsif category.eql?("show")
+      return recipes.group_by(&:show)
+    end
+  end
 end
 
 

@@ -1,0 +1,30 @@
+<h1>Recipe</h1>
+  <p>
+  <%= image_tag @recipe.picture.image_url(:thumb) %>
+  <br/>
+  <%= @recipe.name %>
+<p>
+<br/>
+<p>
+  <h3>Ingredients</h3>
+  <hr>
+  <%= @recipe.ingredients %>
+</p>
+<p>
+  <h3>Preparation Method</h3>
+  <hr>
+  <%= @recipe.preparation_method %>
+</p>
+<p>
+  <% if @recipe.chef.picture.present? %>
+    <%= image_tag @recipe.chef.picture.image_url(:thumb) %>
+  <%end%>
+  <%= @recipe.chef.name %>
+</p>
+
+<p> 
+  <h3>Preparation Time(minutes)</h3>
+  <%= @recipe.preparation_time %>
+  <h3>Cooking Time(minutes)</h3>
+  <%= @recipe.cooking_time %>
+</p>

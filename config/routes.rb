@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'chefs/show'
 
+  get 'recipes/category_index'
+
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   devise_scope :user do
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'recipes#index'
+  root 'recipes#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -80,7 +82,8 @@ Rails.application.routes.draw do
   concern :showable do
     resources :shows
   end
-
+  
+  resources :recipes
   resources :cuisines, concerns: [:recipeable, :videoable]
   resources :courses, concerns: [:recipeable, :videoable]
   resources :shows, concerns: [:recipeable, :videoable]
