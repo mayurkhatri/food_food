@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :find_recipeable, only: [:index, :show]
 
   def index
-    @recipes = @recipeable.present? ? @recipeable.recipes : Recipe.all
+    @recipes = @recipeable.present? ? @recipeable.recipes.includes(:picture) : Recipe.includes(:picture).all
     if @recipeable.present?
       respond_with(@recipeable, @recipes)
     end

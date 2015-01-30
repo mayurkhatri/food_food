@@ -31,10 +31,10 @@ gem 'better_errors', group: :development
 gem 'binding_of_caller', group: :development
 gem 'rails_best_practices', group: :development
 gem 'bullet', group: :development
-gem 'rubocop', require: false
+#gem 'rubocop', require: false
 gem 'brakeman'
 
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'activeadmin', github: 'activeadmin'
 gem 'formtastic'
 gem 'devise'
