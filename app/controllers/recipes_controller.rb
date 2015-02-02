@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :find_recipeable, only: [:index, :show]
 
   def index
-    @recipes = @recipeable.present? ? @recipeable.recipes.includes(:picture) : Recipe.includes(:picture).all
+    @recipes = Recipe.find_all_recipes(@recipeable, params[:search])
     if @recipeable.present?
       respond_with(@recipeable, @recipes)
     end
@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name, :ingredients, :preparation_method,\
 	 :preparation_time, :cooking_time)
   end
-
 
   def find_recipeable
     params.each do |name, value|

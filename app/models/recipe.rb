@@ -6,6 +6,14 @@ class Recipe < ActiveRecord::Base
 
   has_one :picture, as: :imageable
   accepts_nested_attributes_for :picture
+
+  def self.find_all_recipes(recipeable, search)
+    if search.present?
+      search(search)
+    else
+      recipeable.present? ? recipeable.recipes.includes(:picture) : Recipe.includes(:picture).all
+    end
+  end
  
   def self.find_recipes(category)
     if category.eql?("cuisine")
@@ -27,18 +35,9 @@ class Recipe < ActiveRecord::Base
       return recipes.group_by(&:show)
     end
   end
+
+  def self.search(search)
+    Recipe.includes(:picture).where('LOWER(name) LIKE ?', "%#{search.downcase}%")
+  end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 

@@ -52,12 +52,12 @@
             <li><%= link_to "By Show", "#" %></r kali>
           </ul>
         </li> <!-- videos dropdown -->
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search recipes">
-          </div>
-          <button type="submit" class="btn btn-default">Search</button>
-        </form>
+        <%= form_tag recipes_path, method: 'get', html: { :class => "navbar-form navbar-left" } do%> 
+	  <p>
+ 	    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes"%>
+	    <%= submit_tag "Search" %>
+          </p>
+	<%end%>
         <% if user_signed_in? %>
           <li class="pull-right"><%= link_to "Submit Recipe", "#" %></li>
         <%end%>
